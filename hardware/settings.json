@@ -1,0 +1,70 @@
+{
+  "device": "WuYue-QPU-Qz-01-Repetition",
+  "qubit_order": [
+    "q0",
+    "q1",
+    "q2"
+  ],
+  "input_labels_per_qubit": [
+    "0",
+    "1",
+    "+",
+    "+i"
+  ],
+  "measurement_bases_per_qubit": [
+    "X",
+    "Y",
+    "Z"
+  ],
+  "joint_outcome_labels": [
+    "000",
+    "001",
+    "010",
+    "011",
+    "100",
+    "101",
+    "110",
+    "111"
+  ],
+  "settings_per_gate": 1728,
+  "valid_readouts_per_setting": 4096,
+  "readout_mitigation_by_exporter": false,
+  "platform_readout_mitigation": null,
+  "pprgd": {
+    "d": 8,
+    "r": 2,
+    "loss": "sum((p-y)^2)/(2*13824)",
+    "alpha": 40,
+    "mu": 0.125,
+    "tau": 1e-07,
+    "gamma": 0.001,
+    "feasibility_tolerance": 1e-08,
+    "radius": 0.01,
+    "waiting_updates": 50,
+    "hessian_input_chunk": 4,
+    "max_updates": 4000,
+    "max_seconds": 45,
+    "initial_seed": 9241501,
+    "perturbation_seed": 9341501
+  },
+  "gates": {
+    "rx": {
+      "dataset_id": "qpt3_qz1r_rx90_r01",
+      "ideal_operation": "Rx(+pi/2) on each of q0, q1 and q2",
+      "physical_qubits_q0_q1_q2": [
+        7,
+        1,
+        15
+      ]
+    },
+    "cz": {
+      "dataset_id": "qpt3_qz1r_cz01_r01",
+      "ideal_operation": "CZ on q0 and q1, identity on q2",
+      "physical_qubits_q0_q1_q2": [
+        11,
+        12,
+        7
+      ]
+    }
+  }
+}

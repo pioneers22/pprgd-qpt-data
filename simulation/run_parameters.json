@@ -1,0 +1,53 @@
+{
+  "design": {
+    "qubits": 3,
+    "system_dimension": 8,
+    "product_inputs": 64,
+    "measurement_bases_per_input": 27,
+    "outcomes_per_setting": 8,
+    "shots_per_setting": 4096,
+    "replicates_per_gate": 50,
+    "root_seed_first": 9141501,
+    "root_seed_last": 9141550,
+    "data_seed_offset": 0,
+    "initial_seed_offset": 100000,
+    "perturbation_seed_offset": 200000
+  },
+  "pprgd_and_slsqp": {
+    "candidate_kraus_capacity": 2,
+    "weighted_least_squares": "sum((p-y)^2)/(2*13824)",
+    "feasibility_tolerance": 1e-08,
+    "gradient_norm_tolerance": 1e-07,
+    "negative_curvature_tolerance": 0.001
+  },
+  "pprgd": {
+    "step_size": 40,
+    "preconditioner_damping": 0.125,
+    "tangent_ball_radius": 0.01,
+    "unperturbed_steps_after_perturbation": 50,
+    "max_matrix_updates": 4000,
+    "max_seconds": 45
+  },
+  "slsqp": {
+    "ftol": 1e-14,
+    "max_major_iterations": 3000,
+    "max_seconds": 60
+  },
+  "pls": {
+    "maximum_choi_rank": 64,
+    "projection_tolerance": 1e-10,
+    "max_projection_iterations": 20000
+  },
+  "timing_environment": {
+    "cpu": "AMD Ryzen 7 8845H w/ Radeon 780M Graphics",
+    "os": "Windows-11-10.0.26100-SP0",
+    "python": "3.14.4",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "thread_environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  }
+}
