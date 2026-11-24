@@ -12,3 +12,7 @@ This repository contains the data behind the tables and figures in *Optimization
 Each data set uses 64 product input states and 27 product Pauli measurement bases. Each of the 1,728 input–basis combinations has 4,096 shots and eight possible three-bit outcomes.
 
 In the simulations, the ideal gate generates the counts, so the relative Choi distance measures reconstruction error. On QZ01, each gate has one measured data set. The hardware distance compares its reconstructed effective channel with the corresponding ideal gate.
+
+## License
+
+The data and documentation in this repository are licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). [Full license text](LICENSE)
