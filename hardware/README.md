@@ -33,13 +33,13 @@ Each gate directory contains three NumPy archives readable with `np.load(path, a
 | `estimate.npz` | The fitted matrix `K` (16 × 8, two vertically stacked Kraus operators), estimated and ideal Choi matrices `J_est` and `J_ref` (64 × 64), and ideal unitary `U_ref` (8 × 8). `J` is a second copy of `J_est` in the original archive. `fitted_probabilities` and `observed_frequencies` have axes (input, basis, outcome) and shape 64 × 27 × 8. |
 | `pauli_transfer.npz` | Numerical data for Figure 2, derived from the saved `K` and `U_ref`. `ideal`, `reconstructed` and `difference` are the top, middle and bottom panels. The 64 strings in `pauli_labels` index both axes. |
 
-The Choi matrices use the unnormalized convention, with the input tensor factor first, so their trace is 8. For the Pauli transfer matrices, row $a$ labels the output Pauli string and column $b$ the input string. Each string uses the qubit order $q_0,q_1,q_2$. The strings run from III to ZZZ, using I, X, Y, Z on each qubit. The entries are $R_{ab}=\operatorname{Tr}[P_a\,\mathcal{E}(P_b)]/8$. For the fitted channel, $\mathcal{E}(P_b)=\sum_j K_j P_b K_j^\dagger$. The difference array is the reconstructed matrix minus the ideal matrix.
+The Choi matrices use the unnormalized convention, with the input tensor factor first, so their trace is 8. For the Pauli transfer matrices, row $a$ labels the output Pauli string and column $b$ the input string. Each string uses the qubit order $q_0,q_1,q_2$. The strings run from III to ZZZ, using I, X, Y, Z on each qubit. The entries are $R_{ab}=\mathrm{Tr}[P_a \mathcal{E}(P_b)]/8$. For the fitted channel, $\mathcal{E}(P_b)=\sum_j K_j P_b K_j^\dagger$. The difference array is the reconstructed matrix minus the ideal matrix.
 
 [results.csv](results.csv) gives the two rows before manuscript rounding. The first three metrics form Table 2. The fourth is the largest absolute entry of the corresponding Figure 2 difference matrix.
 
 | Metric | Calculation |
 | --- | --- |
-| `average_gate_fidelity_percent` | $100(\operatorname{Tr}[J_\mathrm{est}J_\mathrm{ref}]+8)/72$ |
+| `average_gate_fidelity_percent` | $100(\mathrm{Tr}[J_\mathrm{est}J_\mathrm{ref}]+8)/72$ |
 | `relative_choi_distance` | $\lVert J_\mathrm{est}-J_\mathrm{ref}\rVert_F/\lVert J_\mathrm{ref}\rVert_F$ |
 | `fitting_rmse` | Root mean square of fitted probability minus observed frequency across all 13,824 entries, in probability units |
 | `max_abs_ptm_difference` | Maximum absolute value over the 64 × 64 Pauli transfer matrix difference |
